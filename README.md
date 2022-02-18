@@ -49,13 +49,32 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="laravel-logzio-views"
 ```
 
-## Usage
+## Laravel Usage
+
+In `config/logging.php file`, config you log with driver `logzio`
 
 ```php
-$logzio = new RobMellett\Logzio();
-echo $logzio->echoPhrase('Hello, RobMellett!');
+<?php
+return [
+    // ...
+	'logzio' => [
+	    'driver' => 'logzio',
+	    'name'   => 'channel-name',
+	    'token'  => 'logz-access-token',
+	    'type'   => 'http-bulk',
+	    'ssl'    => true,
+	    'level'  => 'info',
+	    'bubble' => true,
+	    'region' => 'au', // leave empty for default region, or if you are on a trial
+	],
+	// ...
+];
 ```
+In your code using
 
+```php
+Log::channel('logzio')->info('Some message');
+```
 ## Testing
 
 ```bash
