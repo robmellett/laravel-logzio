@@ -2,13 +2,13 @@
 
 namespace RobMellett\Logzio\Formatters;
 
+use function collect;
 use GuzzleHttp\MessageFormatter;
 use Illuminate\Support\Str;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Throwable;
 
-use function collect;
+use Throwable;
 
 class SecureMessageFormatter extends MessageFormatter
 {
