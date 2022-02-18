@@ -19,7 +19,7 @@ class ResponseMessageFormatter extends MessageFormatter
             "type" => "Response",
             "status_code" => $response->getStatusCode(),
             "headers" => $response->getHeaders(),
-            "body" => $response->getBody()->__toString()
+            "body" => $response->getBody()->__toString(),
         ]);
     }
 }
