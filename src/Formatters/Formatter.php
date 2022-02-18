@@ -5,6 +5,7 @@ namespace RobMellett\Logzio\Formatters;
 use DateTimeInterface;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\JsonFormatter;
+use RobMellett\Logzio\Support\RemoveSensitiveValues;
 
 final class Formatter extends JsonFormatter implements FormatterInterface
 {
@@ -37,11 +38,12 @@ final class Formatter extends JsonFormatter implements FormatterInterface
             unset($record["datetime"]);
         }
 
-        $message = json_decode($record['message']);
+        $message = json_decode(RemoveSensitiveValues::format($record['message']));
 
         $record['id'] = $message->id;
         $record['type'] = $message->type;
         $record['headers'] = $message->headers;
+        $record['message'] = $message;
 
         if ($message->type == 'Request') {
             $record['method'] = $message->method;
