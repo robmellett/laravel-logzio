@@ -45,7 +45,7 @@ return [
 	// ...
 ];
 ```
-In your code using
+You can use the log facade in the following way.
 
 ```php
 Log::channel('logzio')->info('Some message');
