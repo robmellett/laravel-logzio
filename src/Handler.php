@@ -2,8 +2,9 @@
 
 namespace RobMellett\Logzio;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use http\Client\Request;
+use GuzzleHttp\Psr7\Request;
 use LogicException;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
