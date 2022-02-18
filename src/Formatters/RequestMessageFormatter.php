@@ -20,7 +20,7 @@ class RequestMessageFormatter extends MessageFormatter
             "method" => $request->getMethod(),
             "uri" => $request->getUri()->__toString(),
             "headers" => $request->getHeaders(),
-            "body" => $request->getBody()->__toString(),
+            "parameters" => $request->getBody()->__toString(),
         ]);
     }
 }

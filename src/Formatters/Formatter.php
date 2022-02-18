@@ -43,13 +43,16 @@ final class Formatter extends JsonFormatter implements FormatterInterface
         $record['type'] = $message->type;
         $record['headers'] = $message->headers;
 
-        // On the Request
-        $record['method'] = $message?->method;
-        $record['uri'] = $message?->uri;
+        if ($message->type == 'Request') {
+            $record['method'] = $message->method;
+            $record['uri'] = $message?->uri;
+            $record['parameters'] = $message?->parameters;
+        }
 
-        // On the Response
-        $record['body'] = $message?->body;
-        $record['status_code'] = $message?->status_code;
+        if ($message->type == 'Response') {
+            $record['body'] = $message->body;
+            $record['status_code'] = $message->status_code;
+        }
 
         return parent::format($record);
     }
