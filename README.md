@@ -23,42 +23,13 @@ You can install the package via composer:
 composer require robmellett/laravel-logzio
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-logzio-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="laravel-logzio-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-    'logzio' => [
-        'driver' => 'logzio',
-        'name'   => 'channel-name',
-        'token'  => env('LOGZIO_TOKEN'),
-        'type'   => 'http-bulk',
-        'ssl'    => true,
-        'level'  => 'info',
-        'bubble' => true,
-        'region' => 'au', // leave empty for default region
-    ],
-];
-```
-
 ## Laravel Usage
 
 In `config/logging.php file`, config your log driver with `logzio`.
 
 ```php
 <?php
+
 return [
     // ...
 	'logzio' => [
