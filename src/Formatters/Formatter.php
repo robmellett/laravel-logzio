@@ -1,6 +1,6 @@
 <?php
 
-namespace RobMellett\Logzio;
+namespace RobMellett\Logzio\Formatters;
 
 use DateTimeInterface;
 use Monolog\Formatter\FormatterInterface;

@@ -9,6 +9,7 @@ use LogicException;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
+use RobMellett\Logzio\Formatters\Formatter;
 
 class Handler extends AbstractProcessingHandler
 {

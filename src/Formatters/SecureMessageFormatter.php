@@ -1,12 +1,14 @@
 <?php
 
-namespace RobMellett\Logzio;
+namespace RobMellett\Logzio\Formatters;
 
 use GuzzleHttp\MessageFormatter;
 use Illuminate\Support\Str;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
+
+use function collect;
 
 class SecureMessageFormatter extends MessageFormatter
 {

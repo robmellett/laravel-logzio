@@ -31,18 +31,18 @@ In `config/logging.php file`, config your log driver with `logzio`.
 <?php
 
 return [
-    // ...
-	'logzio' => [
-	    'driver' => 'logzio',
-	    'name'   => 'channel-name',
-	    'token'  => 'logz-access-token',
-	    'type'   => 'http-bulk',
-	    'ssl'    => true,
-	    'level'  => 'info',
-	    'bubble' => true,
-	    'region' => 'au', // leave empty for default region, or if you are on a trial
-	],
-	// ...
+// ...
+'logzio' => [
+    'driver' => 'logzio',
+    'name'   => 'channel-name',
+    'token'  => 'logz-access-token',
+    'type'   => 'http-bulk',
+    'ssl'    => true,
+    'level'  => 'info',
+    'bubble' => true,
+    'region' => 'au', // leave empty for default region, or if you are on a trial
+],
+// ...
 ];
 ```
 You can use the log facade in the following way.
@@ -50,6 +50,7 @@ You can use the log facade in the following way.
 ```php
 Log::channel('logzio')->info('Some message');
 ```
+
 ## Testing
 
 ```bash
