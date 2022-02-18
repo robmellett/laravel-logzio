@@ -70,7 +70,14 @@ class SecureMessageFormatter extends MessageFormatter
         $searchFor = ['key', 'secret', 'hash', 'token'];
 
         return collect(config('services'))
-            ->flattenWithKeys()
+            ->map(function ($items) {
+                $flattened = [];
+                array_walk_recursive($items, function ($item, $key) use (&$flattened) {
+                    $flattened += [$key => $item];
+                });
+
+                return collect($flattened);
+            })
             ->filter(function ($value, $key) use ($searchFor) {
                 return Str::of($key)->lower()->contains($searchFor);
             })
