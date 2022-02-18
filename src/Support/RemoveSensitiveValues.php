@@ -13,21 +13,16 @@ class RemoveSensitiveValues
         self::$sensitiveValuesToIgnore = $this->sensitiveKeysToRemove();
     }
 
-    private static function replacementValue()
-    {
-        return "********";
-    }
-
     public static function format(string $message): string
     {
         foreach (self::$sensitiveValuesToIgnore as $secureValue) {
-            $message = Str::of($message)->replace($secureValue, self::replacementValue());
+            $message = Str::of($message)->replace($secureValue, '********');
         }
 
         $regexes = [
             ['find' => '(\"new_password\":\".+\")', 'replace' => '"new_password":"********"'],
             ['find' => '(PasswordDigest=\"[A-Za-z0-9=]+\")', 'replace' => 'PasswordDigest="********"'],
-            ['find' => 'Bearer\s([A-Za-z0-9\.]+)', 'replace' => "Bearer ********"],
+            ['find' => '(Bearer\s([A-Za-z0-9\.\_\-]+))', 'replace' => "Bearer ********"],
         ];
 
         // Special Scenarios to remove
