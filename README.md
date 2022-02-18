@@ -40,18 +40,22 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'logzio' => [
+        'driver' => 'logzio',
+        'name'   => 'channel-name',
+        'token'  => env('LOGZIO_TOKEN'),
+        'type'   => 'http-bulk',
+        'ssl'    => true,
+        'level'  => 'info',
+        'bubble' => true,
+        'region' => 'au', // leave empty for default region
+    ],
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-logzio-views"
 ```
 
 ## Laravel Usage
 
-In `config/logging.php file`, config you log with driver `logzio`
+In `config/logging.php file`, config your log driver with `logzio`.
 
 ```php
 <?php
