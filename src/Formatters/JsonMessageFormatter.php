@@ -19,7 +19,7 @@ class JsonMessageFormatter extends MessageFormatter
             "method" => $request->getMethod(),
             "uri" => $request->getUri()->__toString(),
             "headers" => $request->getHeaders(),
-            "body" => $request->getBody()->__toString()
+            "body" => $request->getBody()->__toString(),
         ]);
     }
 }
