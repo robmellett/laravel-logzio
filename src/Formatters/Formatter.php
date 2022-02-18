@@ -44,12 +44,12 @@ final class Formatter extends JsonFormatter implements FormatterInterface
         $record['headers'] = $message->headers;
 
         // On the Request
-        $record['method'] = $message->method;
+        $record['method'] = $message?->method;
         $record['uri'] = $message?->uri;
 
         // One the Response
-        $record['body'] = $message->body;
-        $record['status_code'] = $message->status_code;
+        $record['body'] = $message?->body;
+        $record['status_code'] = $message?->status_code;
 
         return parent::format($record);
     }
