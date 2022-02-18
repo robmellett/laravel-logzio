@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 
 class RemoveSensitiveValues
 {
-    private static array $sensitiveValuesToIgnore;
+    private static array $sensitiveValuesToIgnore = [];
 
     public function __construct()
     {
