@@ -7,7 +7,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
 
-class JsonMessageFormatter extends MessageFormatter
+class RequestMessageFormatter extends MessageFormatter
 {
     public function format(
         RequestInterface $request,
@@ -15,7 +15,8 @@ class JsonMessageFormatter extends MessageFormatter
         ?Throwable $error = null
     ): string {
         return json_encode([
-            "id" => "",
+            "id" => parent::format($request, $response, $error),
+            "type" => "Request",
             "method" => $request->getMethod(),
             "uri" => $request->getUri()->__toString(),
             "headers" => $request->getHeaders(),
