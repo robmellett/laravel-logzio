@@ -47,7 +47,7 @@ final class Formatter extends JsonFormatter implements FormatterInterface
         $record['method'] = $message?->method;
         $record['uri'] = $message?->uri;
 
-        // One the Response
+        // On the Response
         $record['body'] = $message?->body;
         $record['status_code'] = $message?->status_code;
 
