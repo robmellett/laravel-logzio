@@ -1,6 +1,6 @@
 {
     "name": "robmellett/laravel-logzio",
-    "description": "Unified log, metric, and trace analytics for any stack",
+    "description": "Logzio: Unified log, metric, and trace analytics for any stack",
     "keywords": [
         "robmellett",
         "laravel",
@@ -17,8 +17,11 @@
     ],
     "require": {
         "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0"
+        "guzzlehttp/guzzle": "^7.4",
+        "illuminate/contracts": "^9.0",
+        "monolog/monolog": "^2.3",
+        "psr/log": "^3.0",
+        "spatie/laravel-package-tools": "^1.9.2"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0",
