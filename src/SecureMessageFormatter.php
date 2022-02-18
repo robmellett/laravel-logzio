@@ -48,7 +48,7 @@ class SecureMessageFormatter extends MessageFormatter
 
         $regexes = [
             ['find' => '(\"new_password\":\".+\")', 'replace' => '"new_password":"********"'],
-            ['find' => '(PasswordDigest=\"[A-Za-z0-9=]+\")', 'replace' => 'PasswordDigest="********"']
+            ['find' => '(PasswordDigest=\"[A-Za-z0-9=]+\")', 'replace' => 'PasswordDigest="********"'],
         ];
 
         // Special Scenarios to remove
