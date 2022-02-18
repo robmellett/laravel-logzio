@@ -6,7 +6,7 @@ use DateTimeInterface;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\JsonFormatter;
 
-class Formatter extends JsonFormatter implements FormatterInterface
+final class Formatter extends JsonFormatter implements FormatterInterface
 {
     /**
      * Datetime format for Logz.io
